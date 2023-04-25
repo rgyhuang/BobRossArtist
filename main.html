@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+	<title>My Website</title>
+</head>
+<body>
+    <div class="logo">
+        <h1> bob ross ai</h1>
+    </div>
+    <div class="open-file">
+        <input type='file' title=" " name="file" onchange="loadFile(event)">
+        <!-- <img id="output" href="/Downloads/thumbnail.png" download="pic.jpg"> -->
+        <a href="/Downloads/thumbnail.png" download="pic.png">
+            <img id="output">
+        </a>
+    </div>
+    <!-- <div class="wrapper"></div> -->
+        <div class="suggestion">
+            <button class="suggestion-img"><img src="button1.png"></button>
+            <button class="suggestion-img"><img src="button2.png"></button>
+            <button class="suggestion-img"><img src="button3.png"></button>
+            <button class="suggestion-img"><img src="button4.png"></button>
+            <button class="suggestion-img"><img src="button5.png"></button>
+        </div>
+        <!-- <button class="suggestion"><img src="button1.png"></button>
+        <button class="suggestion"><img src="button2.png"></button>
+        <button class="suggestion"><img src="button3.png"></button>
+        <button class="suggestion"><img src="button4.png"></button>
+        <button class="suggestion"><img src="button5.png"></button> -->
+
+        <!-- <input class="search" type="text" placeholder="Give me..."> -->
+
+        <p class="instructions"> bob ross's pro tips
+        </p>
+        <!-- <p class="guidelines"> </p>
+        <div class="cover"> </div>
+
+        <h2 class="name">
+            <h4 class="artist">  </h4>
+        </h2>
+        <div class="description"> </div>
+        <button class="seeMore" onclick="guide()"> See More ☆ﾟ.* </button> -->
+        <script>
+            var loadFile = function(event) {
+                var output = document.getElementById('output');
+                output.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+
+
+
+
+	<!-- <div class="container">
+		<div class="left">
+			<h2>File Upload</h2>
+			<input type="file" name="file" onchange="loadFile(event)">
+			<img id="output">
+		</div>
+		<div class="right">
+			<button><img src="button1.png"></button>
+			<button><img src="button2.png"></button>
+			<button><img src="button3.png"></button>
+            <button><img src="button4.png"></button>
+			<button><img src="button5.png"></button>
+		</div>
+	</div>
+
+	<script>
+		var loadFile = function(event) {
+			var output = document.getElementById('output');
+			output.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script> -->
+
+</body>
+</html>

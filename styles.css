@@ -1,0 +1,238 @@
+/* .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 100vh;
+	padding: 20px;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.right {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+button {
+	margin-left: 10px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+button img {
+	height: 100px;
+    width: 70px;
+}
+
+.file {
+    width: 70px;
+}
+
+*/
+
+* {
+    font-family: "Inter", Arial, serif;
+    letter-spacing: .15rem;
+}
+img {
+    border:0;
+    object-fit: contain;
+}
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+.logo {
+    position: fixed;
+    top: 5.5vh;
+    left: calc(100vw/2 - 45vw);
+    width: 10vw;
+    height: 10vh;
+    background: rgb(255, 255, 255);
+}
+
+.wrapper {
+    /* display: flex; */
+    position: fixed;
+    bottom: calc(100vh/2 - 85vh/2);
+    right: calc(100vw/2 - 45vw);
+    width: 30vw;
+    height: 85vh;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 0px 2px 5px #5d5d5d;
+    border-color: #000000;
+    opacity: 0.35;
+
+/* 
+    filter: blur(5px);
+    -webkit-filter: blur(5px); */
+
+    height: 85%;
+
+
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 1000%;
+
+    animation: fadeInBack 2s;
+}
+
+.search {
+    position: fixed;
+    top: 16vh;
+    width: 20vw;
+    height: 2vh;
+    right: calc(100vw/2 - 40vw);
+    overflow: hidden;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.suggestion {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10vh;
+    width: 20vw;
+    height: 75vh;
+    right: calc(100vw/2 - 50vw);
+    overflow: hidden;
+    background-color: #ffffff;
+    border: none;
+    /* box-shadow: 0px 5px 5px rgb(0 0 0 / 0.1); */
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.suggestion-img {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+    background-size: 100% 100%;
+    width: 15vw;
+    height: 30vh;
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 0.1);
+}
+.suggestion-img:hover {
+    background-color: rgba(0, 0, 0, 0.499);
+}
+
+.open-file {
+    position: fixed;
+    top: 18vh;
+    left: calc(100vw/2 - 45vw);
+    width: 10vw;
+    height: 1vh;
+    background: rgb(255, 255, 255);
+}
+
+#output {
+    width: 70vw;
+    height: 70vhs;
+    border-radius: 10px;
+    top: 8vh;
+}
+
+input[type='file'] {
+    color: transparent;
+  }
+/* .song-info{ 
+    display: flex;
+    width:400 px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.instructions {
+    position: fixed;
+    /* background: lightgray; */
+    top: 8vh;
+    width: 20vw;
+    right: calc(100vw/2 - 51.5vw);
+    text-align: left;
+    color: rgb(33, 33, 33);
+}
+
+.guidelines {
+    position: fixed;
+    /* background: lightgray; */
+    top: 31vh;
+    width: 22vw;
+    right: calc(100vw/2 - 41vw);
+    text-align: left;
+    color: rgb(33, 33, 33);
+}
+
+.name {
+    position: fixed;
+    /* background: lightgray; */
+    top: 60.5vh;
+    width: 20vw;
+    right: calc(100vw/2 - 40vw);
+    text-align: center;
+    color: black;
+    font-size: 30px;
+
+}
+
+.artist {
+    position: fixed;
+    /* background: lightgray; */
+    top: 58.5vh;
+
+    width: 20vw;
+    right: calc(100vw/2 - 40vw);
+    text-align: center;
+    color: black;
+}
+
+.cover {
+    position: fixed;
+    /* background: lightgray; */
+    top: 25vh;
+    width: 18vw;
+    height: 18vw;
+    right: calc(100vw/2 - 39vw);
+    text-align: center;
+    background-size: 100% 100%;
+    border-radius: 25px;
+    z-index:2;
+    animation: fadeIn 2s;
+}
+
+.seeMore {
+    position: fixed;
+    background-color: white;    
+    /* background: lightgray; */
+    top: 80vh;
+    right: calc(100vw/2 - 34.3vw);
+    width: 9vw;
+    height: 5vh;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-size: 100% 100%;
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 0.1);
+    z-index:2;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeInBack {
+    0% { opacity: 0; }
+    100% { opacity: 0.35; }
+  }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
