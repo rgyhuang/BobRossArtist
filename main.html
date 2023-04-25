@@ -9,33 +9,30 @@
 </head>
 <body>
     <div class="logo">
-        <h1> bob ross ai</h1>
+        <h1> bob ross is always right</h1>
     </div>
     <div class="open-file">
-        <input type='file' title=" " name="file" onchange="loadFile(event)">
+        <input type='file' title=" " name="file" onchange="loadFile(event)" id="file-button">
         <!-- <img id="output" href="/Downloads/thumbnail.png" download="pic.jpg"> -->
         <a href="/Downloads/thumbnail.png" download="pic.png">
-            <img id="output">
+            <div class="board-container">
+                <img id="output">
+            </div>
+
         </a>
     </div>
     <!-- <div class="wrapper"></div> -->
-        <div class="suggestion">
-            <button class="suggestion-img"><img src="button1.png"></button>
+    <div class="instructions"> bob ross's pro tips </div>
+        <div id="suggestion">
+            <!-- <button class="suggestion-img"><img src="button1.png"></button>
             <button class="suggestion-img"><img src="button2.png"></button>
             <button class="suggestion-img"><img src="button3.png"></button>
             <button class="suggestion-img"><img src="button4.png"></button>
-            <button class="suggestion-img"><img src="button5.png"></button>
+            <button class="suggestion-img"><img src="button5.png"></button> -->
         </div>
-        <!-- <button class="suggestion"><img src="button1.png"></button>
-        <button class="suggestion"><img src="button2.png"></button>
-        <button class="suggestion"><img src="button3.png"></button>
-        <button class="suggestion"><img src="button4.png"></button>
-        <button class="suggestion"><img src="button5.png"></button> -->
 
         <!-- <input class="search" type="text" placeholder="Give me..."> -->
 
-        <p class="instructions"> bob ross's pro tips
-        </p>
         <!-- <p class="guidelines"> </p>
         <div class="cover"> </div>
 
@@ -45,10 +42,45 @@
         <div class="description"> </div>
         <button class="seeMore" onclick="guide()"> See More ☆ﾟ.* </button> -->
         <script>
+        function hideButton() {
+            const button = document.getElementById('file-button');
+            button.classList.add('hide');
+        }
+
+        var output = document.getElementById('output');
             var loadFile = function(event) {
-                var output = document.getElementById('output');
                 output.src = URL.createObjectURL(event.target.files[0]);
+                hideButton();
             };
+        
+        var jsonFile;
+        fetch("output.json")
+            .then(res => res.json())
+            .then(data => jsonFile = JSON.parse(data));
+        
+        const images = ["https://replicate.delivery/pbxt/eAiyy2Vup6U2HqTwnpjZX1Q1ZWs5nT8qP2vNp62MUYpuaoaIA/output.jpg", "https://replicate.delivery/pbxt/hf3vdcx4IQ3OTyPdeZ8YrgMMzexeWypr4uKvaanhxGYcWDVDB/output.jpg", "https://replicate.delivery/pbxt/7AVlNtlzza4aIZdwefyC2IWhOfqXCOBEXCeYTe1fKe854aoaIA/output.jpg", "https://replicate.delivery/pbxt/HUw6Np2XZh5eASvuKeBIT2XIUBeSNZ9X3lSKaD8d8Vu2rhqhA/output.jpg", "https://replicate.delivery/pbxt/4Y8HbNWBRoZrF5uGkx9OLyptYtTpSZfRPyN02GDKbpNDboaIA/output.jpg"];
+        const captions = ["1. \"Let's add a little happy little tree next to that precious little stuffed animal, just like it's in its natural habitat.\"", "2. \"Now, let's use a little bit of that warm yellow color to give our little friend a nice soft glow.\"", "3. \"We'll use this brush to create some lovely, fluffy fur for our little stuffed animal, just like the real thing.\"", "4. \"We'll add a little bit of shading here and there to create some depth and make this little guy look even more huggable.\"", "5. \"Let's use this palette knife to add some texture to the wall behind our little friend, giving the illusion of a cozy bedroom or playroom.\""];
+        const container = document.getElementById('suggestion');
+        var c = 0;
+        images.forEach(image => {
+            const img = document.createElement('img');
+            const cap = document.createElement('p');
+            
+            img.src = image;
+            img.className = "suggestion-img";
+            img.addEventListener('click', function(){
+                updateImg(img, output);
+            });
+            container.appendChild(img);
+            cap.innerHTML = captions[c];
+            cap.className = "suggestion-caption";
+            container.appendChild(cap);
+            c += 1;
+        })
+
+        function updateImg (img, output) {
+            output.src = img.src;
+        }
         </script>
 
 

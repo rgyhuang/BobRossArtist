@@ -97,13 +97,13 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     padding: 15px;
 }
 
-.suggestion {
+#suggestion {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 10vh;
     width: 20vw;
-    height: 75vh;
+    height: 77vh;
     right: calc(100vw/2 - 50vw);
     overflow: hidden;
     background-color: #ffffff;
@@ -111,22 +111,31 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     /* box-shadow: 0px 5px 5px rgb(0 0 0 / 0.1); */
     border-radius: 10px;
     padding: 15px;
+    overflow-y: scroll;
 }
 
 .suggestion-img {
-    background-color: white;
+    background-color: black;
     border-radius: 10px;
+    object-fit: fill;
     margin-top: 20px;
     border: none;
     background-size: 100% 100%;
     width: 15vw;
-    height: 30vh;
+    height: 17vh;
     box-shadow: 0px 5px 5px rgb(0 0 0 / 0.1);
 }
 .suggestion-img:hover {
-    background-color: rgba(0, 0, 0, 0.499);
+    /* background-color: rgba(0, 0, 0, 0.499); */
+    /* opacity: 0.1; */
+    filter: brightness(60%);
+    /* animation: fadeIn 1s; */
 }
 
+.suggestion-caption {
+    margin-top: 20px;
+    width: 15vw;
+}
 .open-file {
     position: fixed;
     top: 18vh;
@@ -136,11 +145,18 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     background: rgb(255, 255, 255);
 }
 
-#output {
+.board-container {
     width: 70vw;
-    height: 70vhs;
+    height: 70vh;
     border-radius: 10px;
     top: 8vh;
+}
+#output {
+    width: 70vw;
+    height: 70vh;
+    border-radius: 10px;
+    object-fit: fill;
+    border: 10px;
 }
 
 input[type='file'] {
@@ -161,6 +177,8 @@ input[type='file'] {
     right: calc(100vw/2 - 51.5vw);
     text-align: left;
     color: rgb(33, 33, 33);
+    /* background: white; */
+    padding-bottom: 20px;
 }
 
 .guidelines {
@@ -235,4 +253,16 @@ input[type='file'] {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+  }
+
+  #file-button {
+    display: block;
+  }
+  
+  .hide {
+    display: none;
+  }
+
+  h1 {
+    width: 300px;
   }
